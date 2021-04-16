@@ -40,6 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func loadBooks() -> [Book] {
         let fetchRequest: NSFetchRequest<Book> = Book.fetchRequest()
+        //MARK:Challenge 2 - Ascending Order
         let titleSort: NSSortDescriptor = NSSortDescriptor(key:"title", ascending: true)
         fetchRequest.sortDescriptors = [titleSort]
         
@@ -50,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } catch{
             NSLog("My Error: %@", error as NSError)
         }
-        //MARK:Challenge 2 - Ascending Order
+        
         
         return result
     }
